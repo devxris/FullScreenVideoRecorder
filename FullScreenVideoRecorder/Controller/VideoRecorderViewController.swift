@@ -67,7 +67,35 @@ class VideoRecorderViewController: UIViewController {
 		captureSession.startRunning()
 	}
 	
+	var isRecording = false
+	
+	@IBAction func capture(_ sender: UIButton) {
+		if !isRecording {
+			isRecording = true
+			// Animate camera button to indicate it's recording
+			UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse, .repeat, .allowUserInteraction], animations: {
+				self.cameraButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+			}, completion: nil)
+			// Configure output path in temporary folder
+			let outputPath = NSTemporaryDirectory() + "output.mov"
+			let outputFileURL = URL(fileURLWithPath: outputPath)
+			videoOutput?.startRecording(to: outputFileURL, recordingDelegate: self)
+		} else {
+			isRecording = false
+			UIView.animate(withDuration: 0.5, delay: 0, options: [], animations: {
+				self.cameraButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+			}, completion: nil)
+			cameraButton.layer.removeAllAnimations()
+			videoOutput?.stopRecording()
+		}
+	}
 	
 	@IBAction func unwind(segue: UIStoryboardSegue) {
+	}
+}
+
+extension VideoRecorderViewController: AVCaptureFileOutputRecordingDelegate {
+	func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+		if error != nil { print(error?.localizedDescription ?? "") }
 	}
 }
