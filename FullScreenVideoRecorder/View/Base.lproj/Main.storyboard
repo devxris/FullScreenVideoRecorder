@@ -19,6 +19,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzD-Oe-hon">
                                 <rect key="frame" x="157" y="587" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="c9H-iS-cVo"/>
+                                    <constraint firstAttribute="width" constant="60" id="oa4-gd-eoh"/>
+                                </constraints>
                                 <state key="normal" image="VideoCam"/>
                                 <connections>
                                     <action selector="capture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Trp-lS-y7x"/>
@@ -27,13 +31,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vzD-Oe-hon" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZCQ-cS-Ktc"/>
-                            <constraint firstItem="vzD-Oe-hon" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="567" id="l0h-nv-RUY"/>
-                            <constraint firstItem="vzD-Oe-hon" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="pHa-Pi-bMb"/>
-                            <constraint firstAttribute="bottom" secondItem="vzD-Oe-hon" secondAttribute="bottom" constant="20" symbolic="YES" id="tkd-2Z-Jvo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vzD-Oe-hon" secondAttribute="bottom" constant="20" id="CtZ-xB-QIj"/>
+                            <constraint firstItem="vzD-Oe-hon" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tph-eV-4dV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="vzD-Oe-hon" id="Ej7-dk-Owi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
