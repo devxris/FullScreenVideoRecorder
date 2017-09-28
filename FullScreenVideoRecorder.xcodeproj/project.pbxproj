@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45748AFA1F7CB2FD00F93A01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45748AF91F7CB2FD00F93A01 /* AppDelegate.swift */; };
-		45748AFC1F7CB2FD00F93A01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45748AFB1F7CB2FD00F93A01 /* ViewController.swift */; };
+		45748AFC1F7CB2FD00F93A01 /* VideoRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45748AFB1F7CB2FD00F93A01 /* VideoRecorderViewController.swift */; };
 		45748AFF1F7CB2FD00F93A01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45748AFD1F7CB2FD00F93A01 /* Main.storyboard */; };
 		45748B011F7CB2FD00F93A01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45748B001F7CB2FD00F93A01 /* Assets.xcassets */; };
 		45748B041F7CB2FD00F93A01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45748B021F7CB2FD00F93A01 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		45748AF61F7CB2FD00F93A01 /* FullScreenVideoRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullScreenVideoRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45748AF91F7CB2FD00F93A01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45748AFB1F7CB2FD00F93A01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		45748AFB1F7CB2FD00F93A01 /* VideoRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecorderViewController.swift; sourceTree = "<group>"; };
 		45748AFE1F7CB2FD00F93A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45748B001F7CB2FD00F93A01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45748B031F7CB2FD00F93A01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,38 @@
 		45748AF81F7CB2FD00F93A01 /* FullScreenVideoRecorder */ = {
 			isa = PBXGroup;
 			children = (
-				45748AF91F7CB2FD00F93A01 /* AppDelegate.swift */,
-				45748AFB1F7CB2FD00F93A01 /* ViewController.swift */,
-				45748AFD1F7CB2FD00F93A01 /* Main.storyboard */,
-				45748B001F7CB2FD00F93A01 /* Assets.xcassets */,
-				45748B021F7CB2FD00F93A01 /* LaunchScreen.storyboard */,
-				45748B051F7CB2FD00F93A01 /* Info.plist */,
+				45748B0B1F7CB31200F93A01 /* Resources */,
+				45748B0C1F7CB31900F93A01 /* View */,
+				45748B0D1F7CB31E00F93A01 /* Controller */,
 			);
 			path = FullScreenVideoRecorder;
+			sourceTree = "<group>";
+		};
+		45748B0B1F7CB31200F93A01 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45748B001F7CB2FD00F93A01 /* Assets.xcassets */,
+				45748B051F7CB2FD00F93A01 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45748B0C1F7CB31900F93A01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45748B021F7CB2FD00F93A01 /* LaunchScreen.storyboard */,
+				45748AFD1F7CB2FD00F93A01 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45748B0D1F7CB31E00F93A01 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45748AF91F7CB2FD00F93A01 /* AppDelegate.swift */,
+				45748AFB1F7CB2FD00F93A01 /* VideoRecorderViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45748AFC1F7CB2FD00F93A01 /* ViewController.swift in Sources */,
+				45748AFC1F7CB2FD00F93A01 /* VideoRecorderViewController.swift in Sources */,
 				45748AFA1F7CB2FD00F93A01 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,8 +299,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9H46LQG73T;
-				INFOPLIST_FILE = FullScreenVideoRecorder/Info.plist;
+				DEVELOPMENT_TEAM = X5GHG6Y372;
+				INFOPLIST_FILE = "$(SRCROOT)/FullScreenVideoRecorder/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevXris.FullScreenVideoRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,8 +314,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9H46LQG73T;
-				INFOPLIST_FILE = FullScreenVideoRecorder/Info.plist;
+				DEVELOPMENT_TEAM = X5GHG6Y372;
+				INFOPLIST_FILE = "$(SRCROOT)/FullScreenVideoRecorder/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.DevXris.FullScreenVideoRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
