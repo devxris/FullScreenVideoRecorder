@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class VideoRecorderViewController: UIViewController {
 
@@ -90,12 +91,18 @@ class VideoRecorderViewController: UIViewController {
 		}
 	}
 	
-	@IBAction func unwind(segue: UIStoryboardSegue) {
+	// MARK: Navigation
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "ShowAVPlayer" {
+			guard let videoPlayerViewController = segue.destination as? AVPlayerViewController else { return }
+			videoPlayerViewController.player = AVPlayer(url: sender as! URL)
+		}
 	}
 }
 
 extension VideoRecorderViewController: AVCaptureFileOutputRecordingDelegate {
 	func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
 		if error != nil { print(error?.localizedDescription ?? "") }
+		performSegue(withIdentifier: "ShowAVPlayer", sender: outputFileURL)
 	}
 }
